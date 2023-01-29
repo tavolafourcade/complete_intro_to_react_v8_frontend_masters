@@ -53,7 +53,7 @@ const SearchParams = () => {
           placeholder="Location" />
         </label>
         <label htmlFor="animal">
-          Animals
+          Animals from the office
           <select id="animal" value={animal} onChange={e => setAnimal(e.target.value)}>
             <option />
             {
