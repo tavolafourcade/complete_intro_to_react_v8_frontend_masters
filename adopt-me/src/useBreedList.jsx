@@ -9,7 +9,8 @@ export default function useBreedList(animal) {
   // This is a simpler way to implement instead of using useEffect lines below
   const results = useQuery(['breeds', animal], fetchBreedList)
 
-  return [results?.data?.breeds ?? [], results.status]
+  return [results?.data?.breeds ?? [], results.status] // If this available then give me that
+  // The ?? means that if the left side is null or undefined then give me the right side
 
 // const [ breedList, setBreedList ] = useState([])
 // const [ status, setStatus ] = useState('unloaded')
