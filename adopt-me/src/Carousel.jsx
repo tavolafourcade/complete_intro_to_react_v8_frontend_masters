@@ -10,6 +10,13 @@ class Carousel extends Component {
     images: ['http://pets-images.dev-apis.com/pets/none.jpg']
   }
 
+  // Handle the click event
+  handleIndexClick = (e) => { 
+    this.setState({
+      active: +e.target.dataset.index // + is a unary operator that converts a string to a number
+    })
+  }
+
   // Every Class component has a render function
   render () {
     const { active } = this.state;
@@ -22,6 +29,8 @@ class Carousel extends Component {
           {images.map((photo, index) => (
             // eslint-disable-next-line
             <img
+              onClick={this.handleIndexClick}
+              data-index={index}
               key={photo}
               src={photo}
               className={index === active ? "active" : ""}
@@ -33,5 +42,11 @@ class Carousel extends Component {
     )
   }
 }
+
+// function CarouselParent ({animal}) {
+//   const [breedList] = useBreedList(animal)
+
+//   return <Carousel breedList={breedList} />
+// }
 
 export default Carousel
