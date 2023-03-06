@@ -19,6 +19,7 @@ class Carousel extends Component {
 
   // Every Class component has a render function
   render () {
+    // throw new Error('lol error')
     const { active } = this.state;
     const { images } = this.props; // This is immutable
 
